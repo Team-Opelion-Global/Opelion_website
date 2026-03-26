@@ -243,7 +243,7 @@ export default function Navbar() {
       <div className="relative hidden md:block text-white">
 
         {/* Background */}
-        <div className="absolute inset-0 bg-[url('/blue_texture.png')] bg-cover"></div>
+        <div className="absolute inset-0 bg-[url('/navbar_blue.png')] bg-cover"></div>
 
         {/* NAV CONTENT */}
         <div className="relative z-20 max-w-6xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
