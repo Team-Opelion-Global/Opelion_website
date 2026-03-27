@@ -108,11 +108,16 @@ export default function ContactSection() {
                 Send us a message and we&apos;ll get back to you within 12-24 hours.
               </p>
 
-              <input
+              {/* <input
                 type="text"
                 placeholder="Name"
                 className="w-full bg-[#f5f5f5] px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-              />
+              /> */}
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+                          />
 
               <input
                 type="email"
