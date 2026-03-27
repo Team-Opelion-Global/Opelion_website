@@ -104,7 +104,7 @@ export default function ContactSection() {
                           alert("Form submitted"); // temporary (we’ll improve this later)
                         }}
                       > */}
-                          <form
+                          {/* <form
                 className="flex h-[280px] flex-col"
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -128,13 +128,14 @@ export default function ContactSection() {
                     //   }
                     // );
                     console.log(data);
-                    await fetch("https://script.google.com/macros/s/AKfycbzXZ7NQ6StSA0cgHBhURS7TbUiTNE5J0ZCOpqHYXJnt4q9UC_TDGnzpDw8YKou3JhNy/exec", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(data),
-                          });
+                    await fetch("https://script.google.com/macros/s/AKfycbxqRGkfHqoJSgf3ngp5E-pcWL3Ewk0s0sTv_-orUuIR04nkDivcs16kngZzyc_w8b6e/exec", {
+                          method: "POST",
+                          mode: "no-cors", // ✅ THIS FIXES IT
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(data),
+                        });
                                         
                     // ✅ Google Analytics Event
                     if (typeof window !== "undefined" && window.gtag) {
@@ -144,7 +145,23 @@ export default function ContactSection() {
                       });
                     }
               
-                    alert("Message sent successfully!");
+                    // alert("Message sent successfully!");
+                    try {
+                            await fetch(URL, {
+                              method: "POST",
+                              mode: "no-cors",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify(data),
+                            });
+                          
+                            alert("Message sent successfully!");
+                            form.reset();
+                          
+                          } catch (error) {
+                            alert("Something went wrong.");
+                          }
                     form.reset();
               
                   } catch (error) {
@@ -195,13 +212,94 @@ export default function ContactSection() {
                         className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
                       ></textarea> */}
 
-              <button
+              {/* <button
                 type="submit"
                 className="w-fit bg-[#1f6b7a] px-6 py-2 text-sm text-white transition hover:bg-[#15525c]"
               >
                 Submit {">"}
               </button>
-            </form>
+            </form> */}
+
+            <form
+  className="flex h-[280px] flex-col"
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    console.log("Sending:", data); // optional debug
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxqRGkfHqoJSgf3ngp5E-pcWL3Ewk0s0sTv_-orUuIR04nkDivcs16kngZzyc_w8b6e/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      // ✅ Google Analytics Event
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "contact_form_submit", {
+          event_category: "Contact",
+          event_label: "Contact Form",
+        });
+      }
+
+      alert("Message sent successfully!");
+      form.reset();
+
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
+  }}
+>
+  <p className="mb-4 text-sm leading-6 text-gray-500">
+    Send us a message and we&apos;ll get back to you within 12-24 hours.
+  </p>
+
+  <input
+    name="name"
+    type="text"
+    placeholder="Name"
+    className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+  />
+
+  <input
+    name="email"
+    type="email"
+    placeholder="Email Address"
+    className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+  />
+
+  <textarea
+    name="message"
+    rows={4}
+    placeholder="Message"
+    className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
+  ></textarea>
+
+  <button
+    type="submit"
+    className="w-fit bg-[#1f6b7a] px-6 py-2 text-sm text-white transition hover:bg-[#15525c]"
+  >
+    Submit {">"}
+  </button>
+</form>
+
+            
           </div>
         </div>
 
