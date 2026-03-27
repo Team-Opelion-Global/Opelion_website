@@ -88,7 +88,7 @@ export default function ContactSection() {
 
           {/* FORM */}
           <div className="bg-white border border-gray-200 shadow-lg p-8">
-                      <form  
+                      {/* <form  
                         className="flex h-[280px] flex-col"
                         onSubmit={(e) => {
                           e.preventDefault();
@@ -103,46 +103,89 @@ export default function ContactSection() {
                       
                           alert("Form submitted"); // temporary (we’ll improve this later)
                         }}
-                      >
+                      > */}
+                          <form
+                className="flex h-[280px] flex-col"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+              
+                  const form = e.target as HTMLFormElement;
+                  const formData = new FormData(form);
+              
+                  const data = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    message: formData.get("message"),
+                  };
+              
+                  try {
+                    // ✅ Send to Google Sheets
+                    await fetch(
+                      "https://script.google.com/macros/s/AKfycbzXZ7NQ6StSA0cgHBhURS7TbUiTNE5J0ZCOpqHYXJnt4q9UC_TDGnzpDw8YKou3JhNy/exec",
+                      {
+                        method: "POST",
+                        body: JSON.stringify(data),
+                      }
+                    );
+              
+                    // ✅ Google Analytics Event
+                    if (typeof window !== "undefined" && window.gtag) {
+                      window.gtag("event", "contact_form_submit", {
+                        event_category: "Contact",
+                        event_label: "Contact Form",
+                      });
+                    }
+              
+                    alert("Message sent successfully!");
+                    form.reset();
+              
+                  } catch (error) {
+                    alert("Something went wrong. Please try again.");
+                  }
+                }}
+              >
               <p className="mb-4 text-sm leading-6 text-gray-500">
                 Send us a message and we&apos;ll get back to you within 12-24 hours.
               </p>
 
-              {/* <input
-                type="text"
-                placeholder="Name"
-                className="w-full bg-[#f5f5f5] px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-              /> */}
-                  <input
+              <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+              />
+              
+              <input
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+              />
+              
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Message"
+                className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
+              ></textarea>
+
+             
+                  {/* <input
                     type="text"
                     placeholder="Name"
                     className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
                   />
-                       
-
-              {/* <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full bg-[#f5f5f5] px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-              /> */}
 
                    <input
                     type="email"
                     placeholder="Email Address"
                     className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
                   />
-
-              {/* <textarea
-                rows={4}
-                placeholder="Message"
-                className="flex-1 w-full bg-[#f5f5f5] px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
-              ></textarea> */}
-
-                        <textarea
+                    <textarea
                         rows={4}
                         placeholder="Message"
                         className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
-                      ></textarea>
+                      ></textarea> */}
 
               <button
                 type="submit"
