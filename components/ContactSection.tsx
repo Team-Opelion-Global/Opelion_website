@@ -113,23 +113,36 @@ export default function ContactSection() {
                 placeholder="Name"
                 className="w-full bg-[#f5f5f5] px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
               /> */}
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-                          />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+                  />
+                       
 
-              <input
+              {/* <input
                 type="email"
                 placeholder="Email Address"
                 className="w-full bg-[#f5f5f5] px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-              />
+              /> */}
 
-              <textarea
+                   <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
+                  />
+
+              {/* <textarea
                 rows={4}
                 placeholder="Message"
                 className="flex-1 w-full bg-[#f5f5f5] px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
-              ></textarea>
+              ></textarea> */}
+
+                        <textarea
+                        rows={4}
+                        placeholder="Message"
+                        className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
+                      ></textarea>
 
               <button
                 type="submit"
