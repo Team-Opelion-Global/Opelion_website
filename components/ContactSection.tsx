@@ -120,14 +120,22 @@ export default function ContactSection() {
               
                   try {
                     // ✅ Send to Google Sheets
-                    await fetch(
-                      "https://script.google.com/macros/s/AKfycbzXZ7NQ6StSA0cgHBhURS7TbUiTNE5J0ZCOpqHYXJnt4q9UC_TDGnzpDw8YKou3JhNy/exec",
-                      {
-                        method: "POST",
-                        body: JSON.stringify(data),
-                      }
-                    );
-              
+                    // await fetch(
+                    //   "https://script.google.com/macros/s/AKfycbzXZ7NQ6StSA0cgHBhURS7TbUiTNE5J0ZCOpqHYXJnt4q9UC_TDGnzpDw8YKou3JhNy/exec",
+                    //   {
+                    //     method: "POST",
+                    //     body: JSON.stringify(data),
+                    //   }
+                    // );
+                    console.log(data);
+                    await fetch("https://script.google.com/macros/s/AKfycbzXZ7NQ6StSA0cgHBhURS7TbUiTNE5J0ZCOpqHYXJnt4q9UC_TDGnzpDw8YKou3JhNy/exec", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(data),
+                          });
+                                        
                     // ✅ Google Analytics Event
                     if (typeof window !== "undefined" && window.gtag) {
                       window.gtag("event", "contact_form_submit", {
