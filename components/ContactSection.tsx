@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Playfair_Display } from "next/font/google";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 // ✅ Playfair font (scoped)
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -82,7 +88,22 @@ export default function ContactSection() {
 
           {/* FORM */}
           <div className="bg-white border border-gray-200 shadow-lg p-8">
-            <form className="flex h-[280px] flex-col">
+                      <form  
+                        className="flex h-[280px] flex-col"
+                        onSubmit={(e) => {
+                          e.preventDefault();
+          
+                          // ✅ Google Analytics Event
+                          if (typeof window !== "undefined" && window.gtag) {
+                            window.gtag("event", "contact_form_submit", {
+                              event_category: "Contact",
+                              event_label: "Contact Form",
+                            });
+                          }
+                      
+                          alert("Form submitted"); // temporary (we’ll improve this later)
+                        }}
+                      >
               <p className="mb-4 text-sm leading-6 text-gray-500">
                 Send us a message and we&apos;ll get back to you within 12-24 hours.
               </p>
