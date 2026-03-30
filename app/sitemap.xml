@@ -1,0 +1,11 @@
+import { MetadataRoute } from 'next'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    { url: 'https://opelionglobal.com', lastModified: new Date() },
+    { url: 'https://opelionglobal.com/about', lastModified: new Date() },
+    { url: 'https://opelionglobal.com/products', lastModified: new Date() },
+    { url: 'https://opelionglobal.com/blog', lastModified: new Date() },
+    { url: 'https://opelionglobal.com/locations', lastModified: new Date() },
+  ]
+}
