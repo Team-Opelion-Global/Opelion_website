@@ -35,7 +35,7 @@ export default async function ProductPage({
             playsInline
             className="absolute inset-0 h-full w-full scale-[1.1] object-cover object-center"
           >
-            <source src="/Hero_bg_video.mp4" type="video/mp4" />
+            <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
 
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,75,90,0.92)_0%,rgba(31,107,122,0.82)_34%,rgba(31,107,122,0.45)_52%,rgba(31,107,122,0.12)_68%,rgba(31,107,122,0)_100%)]" />
