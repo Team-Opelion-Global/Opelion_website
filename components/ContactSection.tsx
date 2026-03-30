@@ -88,7 +88,7 @@ export default function ContactSection() {
           {/* FORM */}
           <div className="bg-white border border-gray-200 shadow-lg p-8">
 
-            {/* <form
+            <form
               className="flex h-[280px] flex-col"
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -173,97 +173,9 @@ export default function ContactSection() {
               >
                 {loading ? "Sending..." : "Submit >"}
               </button>
-            </form> */}
+            </form>
 
-          <form
-            className="flex flex-col"
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.target as HTMLFormElement;
-              const formData = new FormData(form);
-              const name = formData.get("name") as string;
-              const email = formData.get("email") as string;
-              const message = formData.get("message") as string;
-          
-              // ✅ Validation
-              if (!name.trim() || !email.trim() || !message.trim()) {
-                alert("Please fill in all fields.");
-                return;
-              }
-          
-              // ✅ Email validation
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
-                return;
-              }
-          
-              try {
-                fetch(
-                  "https://script.google.com/macros/s/AKfycbw7I_gpnxA7XBUWOg5GXICN5DWGvjSj__bc0m6G9SvA0mt7JS6wP751Bx60hn3QSZMm/exec",
-                  {
-                    method: "POST",
-                    mode: "no-cors",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name, email, message }),
-                  }
-                );
-          
-                if (typeof window !== "undefined" && window.gtag) {
-                  window.gtag("event", "contact_form_submit", {
-                    event_category: "Contact",
-                    event_label: "Contact Form",
-                  });
-                }
-          
-                setSubmitted(true); // ✅ Show thank you message
-                form.reset();
-          
-              } catch (error) {
-                console.error(error);
-                alert("Something went wrong. Please try again.");
-              }
-            }}
-          >
-            <p className="mb-4 text-sm leading-6 text-gray-500">
-              Send us a message and we&apos;ll get back to you within 12-24 hours.
-            </p>
-          
-            <input
-              name="name"
-              type="text"
-              placeholder="Name"
-              className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-            />
-          
-            <input
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              className="w-full bg-[#f5f5f5] text-black px-4 py-1.5 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-3"
-            />
-          
-            <textarea
-              name="message"
-              rows={4}
-              placeholder="Message"
-              className="flex-1 w-full bg-[#f5f5f5] text-black px-4 py-2 outline-none text-sm placeholder:text-gray-400 focus:ring-1 focus:ring-[#1f6b7a] mb-4"
-            ></textarea>
-          
-            <button
-              type="submit"
-              className="w-fit bg-[#1f6b7a] px-6 py-2 text-sm text-white transition hover:bg-[#15525c]"
-            >
-              Submit {">"}
-            </button>
-          
-            {/* ✅ Thank you message */}
-            {submitted && (
-              <p className="mt-4 text-sm text-[#1f6b7a] font-medium">
-                Thank you for submitting! We will contact you soon. 🙂
-              </p>
-            )}
-          </form>
+        
 
           </div>
         </div>
