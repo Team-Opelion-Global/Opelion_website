@@ -231,29 +231,33 @@ export default function ContactSection() {
                   email: formData.get("email"),
                   message: formData.get("message"),
                 };
-                try {
-                  await fetch(
-                    "https://script.google.com/macros/s/AKfycbw7I_gpnxA7XBUWOg5GXICN5DWGvjSj__bc0m6G9SvA0mt7JS6wP751Bx60hn3QSZMm/exec",
-                    {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify(data),
+               try {
+                      fetch(
+                        "https://script.google.com/macros/s/AKfycbw7I_gpnxA7XBUWOg5GXICN5DWGvjSj__bc0m6G9SvA0mt7JS6wP751Bx60hn3QSZMm/exec",
+                        {
+                          method: "POST",
+                          mode: "no-cors",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(data),
+                        }
+                      );
+                    
+                      if (typeof window !== "undefined" && window.gtag) {
+                        window.gtag("event", "contact_form_submit", {
+                          event_category: "Contact",
+                          event_label: "Contact Form",
+                        });
+                      }
+                    
+                      alert("Message sent successfully!");
+                      form.reset();
+                    
+                    } catch (error) {
+                      console.error(error);
+                      alert("Something went wrong. Please try again.");
                     }
-                  );
-                  if (typeof window !== "undefined" && window.gtag) {
-                    window.gtag("event", "contact_form_submit", {
-                      event_category: "Contact",
-                      event_label: "Contact Form",
-                    });
-                  }
-                  alert("Message sent successfully!");
-                  form.reset();
-                } catch (error) {
-                  console.error(error);
-                  alert("Something went wrong. Please try again.");
-                }
               }}
             >
               <p className="mb-4 text-sm leading-6 text-gray-500">
