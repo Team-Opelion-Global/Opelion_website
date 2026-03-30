@@ -51,7 +51,7 @@ export const products: Product[] = [
     name: "Alfalfa Seeds",
     slug: "alfalfa-seeds",
     category: "Seeds",
-    image: "/products_images/Alfalfa_seeds.jpeg",
+    image: "/products_images/Alfalfa_seeds.webp",
     shortDescription: "Cleaned export-grade alfalfa seeds for food and agricultural applications.",
     overview:
       "Opelion Global supplies premium alfalfa seeds sourced from trusted Indian growers and processed for consistent export quality. The product is cleaned, sorted, and packed for reliable international shipments.",
@@ -76,7 +76,7 @@ export const products: Product[] = [
     name: "Cumin Seeds",
     slug: "cumin-seeds",
     category: "Spices",
-    image: "/products_images/Cumin_seeds.jpeg",
+    image: "/products_images/Cumin_seeds.webp",
     shortDescription: "Bold, aromatic cumin seeds processed for export markets.",
     overview:
       "Our cumin seeds are selected for strong aroma, uniform size, and clean appearance. They are suitable for importers, spice blenders, wholesalers, and private-label buyers.",
@@ -101,7 +101,7 @@ export const products: Product[] = [
     name: "Ragi",
     slug: "ragi",
     category: "Grains",
-    image: "/products_images/Ragi.jpeg",
+    image: "/products_images/Ragi.webp",
     shortDescription: "Nutritious finger millet grains with reliable export-grade cleaning.",
     overview:
       "Opelion Global offers high-quality ragi sourced from dependable farming regions in India. The grains are cleaned and packed for consistent delivery to global buyers seeking healthy grain ingredients.",
@@ -126,7 +126,7 @@ export const products: Product[] = [
     name: "Sunflower Seeds",
     slug: "sunflower-seeds",
     category: "Seeds",
-    image: "/products_images/Sunflower_seeds.jpeg",
+    image: "/products_images/Sunflower_seeds.webp",
     shortDescription: "Oil-rich sunflower seeds for food, snacking, and industrial use.",
     overview:
       "These sunflower seeds are processed with attention to cleanliness, uniformity, and export packing standards. They are suitable for food processors, snack brands, and ingredient traders.",
@@ -151,7 +151,7 @@ export const products: Product[] = [
     name: "Flax Seeds",
     slug: "flax-seeds",
     category: "Seeds",
-    image: "/products_images/Flax_seeds.jpeg",
+    image: "/products_images/Flax_seeds.webp",
     shortDescription: "Premium flax seeds with stable quality for global food buyers.",
     overview:
       "Our flax seeds are sourced for consistency, cleaned to export norms, and packed for bulk and retail requirements. They work well across health food, bakery, and nutraceutical channels.",
@@ -176,7 +176,7 @@ export const products: Product[] = [
     name: "Pumpkin Seeds",
     slug: "pumpkin-seeds",
     category: "Seeds",
-    image: "/products_images/Pumpkin_seeds.jpeg",
+    image: "/products_images/Pumpkin_seeds.webp",
     shortDescription: "Nutrient-dense pumpkin seeds processed for bulk export supply.",
     overview:
       "Opelion Global supplies carefully cleaned pumpkin seeds suitable for ingredient buyers and food brands. The product is packed to maintain quality throughout export logistics.",
@@ -201,7 +201,7 @@ export const products: Product[] = [
     name: "Chia Seeds",
     slug: "chia-seeds",
     category: "Seeds",
-    image: "/products_images/Chia_seeds.jpeg",
+    image: "/products_images/Chia_seeds.webp",
     shortDescription: "Export-quality chia seeds with excellent cleanliness and uniformity.",
     overview:
       "These chia seeds are processed for purity, consistent sizing, and safe export packing. They fit health food brands, wholesalers, and ingredient importers across multiple markets.",
@@ -226,7 +226,7 @@ export const products: Product[] = [
     name: "White Quinoa",
     slug: "white-quinoa",
     category: "Grains",
-    image: "/products_images/White_Quinoa.jpeg",
+    image: "/products_images/White_Quinoa.webp",
     shortDescription: "Premium white quinoa for importers, retailers, and food processors.",
     overview:
       "Opelion Global offers export-grade white quinoa sourced and processed for international markets. The product is known for its clean finish, uniform grain size, and dependable supply quality.",
@@ -251,7 +251,7 @@ export const products: Product[] = [
     name: "Red Quinoa",
     slug: "red-quinoa",
     category: "Grains",
-    image: "/products_images/Red_Quinoa.jpeg",
+    image: "/products_images/Red_Quinoa.webp",
     shortDescription: "Premium red quinoa with distinct color and export-grade processing.",
     overview:
       "Opelion Global supplies red quinoa for buyers looking for premium grains with strong shelf appeal and dependable export quality. It is cleaned, graded, and packed for retail, food service, and ingredient applications.",
@@ -276,7 +276,7 @@ export const products: Product[] = [
     name: "Black Quinoa",
     slug: "black-quinoa",
     category: "Grains",
-    image: "/products_images/Organic_BlackQuinoa.jpeg",
+    image: "/products_images/Organic_BlackQuinoa.webp",
     shortDescription: "Premium black quinoa for buyers seeking bold color and strong shelf appeal.",
     overview:
       "Black quinoa is supplied with attention to visual quality, grain consistency, and export packaging. It is suitable for premium grain programs, retail blends, and food service applications.",
@@ -301,7 +301,7 @@ export const products: Product[] = [
     name: "Tricolour Quinoa",
     slug: "tricolour-quinoa",
     category: "Grains",
-    image: "/products_images/Tricolour_Quinoa.jpeg",
+    image: "/products_images/Tricolour_Quinoa.webp",
     shortDescription: "A premium tricolour quinoa blend designed for visual appeal and balanced texture.",
     overview:
       "Our tricolour quinoa combines strong shelf appeal with dependable processing quality. It is suitable for retail packs, food service channels, and premium healthy grain brands.",
@@ -326,7 +326,7 @@ export const products: Product[] = [
     name: "Quinoa Flour",
     slug: "quinoa-flour",
     category: "Grains",
-    image: "/products_images/Quinoa_flour1.jpeg",
+    image: "/products_images/Quinoa_flour1.webp",
     shortDescription: "Fine quinoa flour for baking, health foods, and functional ingredient use.",
     overview:
       "Quinoa flour is milled from quality quinoa grains and packed for export consistency. It is suitable for gluten-free product manufacturers, baking applications, and retail health food programs.",
@@ -351,7 +351,7 @@ export const products: Product[] = [
     name: "Quinoa Puff",
     slug: "quinoa-puff",
     category: "Grains",
-    image: "/products_images/Quinoa_puffs.jpeg",
+    image: "/products_images/Quinoa_puffs.webp",
     shortDescription: "Light quinoa puffs for cereals, snacks, and healthy food formulations.",
     overview:
       "Quinoa puff is prepared for food manufacturers and retail brands looking for a clean-label grain ingredient. It is packed to preserve quality and handling convenience through export logistics.",
@@ -376,7 +376,7 @@ export const products: Product[] = [
   //   name: "Organic Black Quinoa",
   //   slug: "organic-black-quinoa",
   //   category: "Grains",
-  //   image: "/products_images/Organic_BlackQuinoa.jpeg",
+  //   image: "/products_images/Organic_BlackQuinoa.webp",
   //   shortDescription: "Organic black quinoa with strong visual appeal and premium positioning.",
   //   overview:
   //     "This organic black quinoa is supplied for buyers looking for distinctive premium grains. It is processed and packed with care to meet export expectations for consistency and presentation.",
@@ -402,7 +402,7 @@ export const products: Product[] = [
     name: "Kalonji Seeds",
     slug: "kalonji-seeds",
     category: "Seeds",
-    image: "/products_images/Kaloni_seeds.jpeg",
+    image: "/products_images/Kaloni_seeds.webp",
     shortDescription: "Cleaned kalonji seeds with strong flavor and export-grade handling.",
     overview:
       "Kalonji seeds are supplied for spice, bakery, and traditional food applications. The product is cleaned, packed, and prepared for buyers who need stable supply and export-ready presentation.",
@@ -427,7 +427,7 @@ export const products: Product[] = [
     name: "Turmeric Powder",
     slug: "turmeric-powder",
     category: "Spices",
-    image: "/products_images/Turmeric_Powder.jpeg",
+    image: "/products_images/Turmeric_Powder.webp",
     shortDescription: "Bright turmeric powder with strong color and export-grade processing.",
     overview:
       "Opelion Global supplies turmeric powder suitable for spice importers, food manufacturers, and wholesale distributors. The powder is prepared for color consistency, cleanliness, and packaging reliability.",
@@ -452,7 +452,7 @@ export const products: Product[] = [
     name: "Toor Dal",
     slug: "toor-dal",
     category: "Pulses & Lentils",
-    image: "/products_images/Toor_Dal.jpeg",
+    image: "/products_images/Toor_Dal.webp",
     shortDescription: "Premium toor dal with uniform grains and export-ready packing.",
     overview:
       "Our toor dal is selected for consistency, cleanliness, and dependable supply. It is ideal for importers, wholesalers, and food distributors seeking stable pulse quality for international markets.",
@@ -477,7 +477,7 @@ export const products: Product[] = [
     name: "White Sesame Seeds",
     slug: "white-sesame-seeds",
     category: "Seeds",
-    image: "/products_images/White_sesame.jpeg",
+    image: "/products_images/White_sesame.webp",
     shortDescription: "Premium white sesame seeds for bakery, oil, and ingredient markets.",
     overview:
       "Opelion Global supplies white sesame seeds processed for export consistency and attractive appearance. The product is suitable for food manufacturers, importers, and private-label packaging programs.",
@@ -503,7 +503,7 @@ export const products: Product[] = [
     name: "Watermelon Seeds",
     slug: "watermelon-seeds",
     category: "Seeds",
-    image: "/products_images/Dry_Melon_seeds.jpeg",
+    image: "/products_images/Dry_Melon_seeds.webp",
     shortDescription: "Cleaned watermelon seeds for snacking, bakery, and ingredient buyers.",
     overview:
       "Our watermelon seeds are processed for cleanliness, consistent sizing, and dependable export packing. They are suitable for snacking, confectionery, bakery, and ingredient use.",
@@ -528,7 +528,7 @@ export const products: Product[] = [
     name: "Basil Seeds",
     slug: "basil-seeds",
     category: "Seeds",
-    image: "/products_images/Basil_seeds.jpeg",
+    image: "/products_images/Basil_seeds.webp",
     shortDescription: "Premium basil seeds processed for beverage, dessert, and health food markets.",
     overview:
       "Basil seeds are supplied with attention to purity, moisture control, and export-safe packaging. They are suitable for beverage processors, wholesalers, and health-focused retail brands.",
@@ -553,7 +553,7 @@ export const products: Product[] = [
     name: "Hemp Seeds",
     slug: "hemp-seeds",
     category: "Seeds",
-    image: "/products_images/Hemp_seeds.jpeg",
+    image: "/products_images/Hemp_seeds.webp",
     shortDescription: "Nutrient-rich hemp seeds with dependable cleaning and export packing.",
     overview:
       "Our hemp seeds are processed for ingredient buyers seeking quality consistency, food safety, and reliable bulk supply. They are suitable for health foods, baking, and retail blends.",
@@ -579,7 +579,7 @@ export const products: Product[] = [
     name: "Chickpeas",
     slug: "chickpeas",
     category: "Pulses & Lentils",
-    image: "/products_images/Chickpeas.jpeg",
+    image: "/products_images/Chickpeas.webp",
     shortDescription: "Premium chickpeas with consistent grading and export-ready packing.",
     overview:
       "Chickpeas are supplied for wholesalers, food manufacturers, and retail programs requiring dependable cleaning, grading, and bulk export supply. The product is suitable for multiple food applications.",
@@ -604,7 +604,7 @@ export const products: Product[] = [
     name: "Carrot Flakes",
     slug: "carrot-flakes",
     category: "Spices",
-    image: "/products_images/Carrot_flakes.png",
+    image: "/products_images/Carrot_flakes.webp",
     shortDescription: "Dehydrated carrot flakes for soups, seasonings, and food processing.",
     overview:
       "Carrot flakes are prepared for food ingredient buyers who need dependable dehydration quality, color retention, and export-ready packing. They work well across dry mixes and processing applications.",
@@ -629,7 +629,7 @@ export const products: Product[] = [
     name: "Carrot Powder",
     slug: "carrot-powder",
     category: "Spices",
-    image: "/products_images/Carrot_powder1.jpeg",
+    image: "/products_images/Carrot_powder1.webp",
     shortDescription: "Fine carrot powder for food blends, natural coloring, and processing applications.",
     overview:
       "Carrot powder is supplied for ingredient buyers looking for dependable dehydration quality, stable color, and export-ready packing. It is suitable for health blends, processed foods, soups, and specialty ingredient programs.",
@@ -654,7 +654,7 @@ export const products: Product[] = [
     name: "Beetroot Powder",
     slug: "beetroot-powder",
     category: "Spices",
-    image: "/products_images/Beetroot_powder.jpeg",
+    image: "/products_images/Beetroot_powder.webp",
     shortDescription: "Fine beetroot powder for natural color, health blends, and food processing.",
     overview:
       "Beetroot powder is supplied for nutraceutical, food, and beverage applications. It is processed for stable quality, fine texture, and export-ready packaging.",
@@ -679,7 +679,7 @@ export const products: Product[] = [
     name: "Beetroot Flakes",
     slug: "beetroot-flakes",
     category: "Spices",
-    image: "/products_images/Beetroot_flakes.jpeg",
+    image: "/products_images/Beetroot_flakes.webp",
     shortDescription: "Dehydrated beetroot flakes for dry mixes, snacks, and ingredient programs.",
     overview:
       "Beetroot flakes are processed for color consistency and stable export handling. They suit food manufacturers, dry mix processors, and specialty ingredient buyers.",
@@ -704,7 +704,7 @@ export const products: Product[] = [
     name: "Ginger Powder",
     slug: "ginger-powder",
     category: "Spices",
-    image: "/products_images/Ginger_powder.jpeg",
+    image: "/products_images/Ginger_powder.webp",
     shortDescription: "Aromatic ginger powder prepared for food, beverage, and spice buyers.",
     overview:
       "Our ginger powder is processed for consistent aroma, controlled moisture, and export packing reliability. It fits spice traders, beverage processors, and food manufacturers.",
@@ -729,7 +729,7 @@ export const products: Product[] = [
       name: "Garlic Powder",
       slug: "garlic-powder",
       category: "Spices",
-      image: "/products_images/Garlic_powder.jpeg",
+      image: "/products_images/Garlic_powder.webp",
       shortDescription: "Fine garlic powder for seasonings, dry mixes, and food processing applications.",
       overview:
         "Garlic powder is supplied for buyers who need dependable dehydration quality, balanced aroma, and export-ready packing. It is suitable for spice blends, snack seasoning, food manufacturing, and institutional use.",
@@ -754,7 +754,7 @@ export const products: Product[] = [
       name: "Onion Powder",
       slug: "onion-powder",
       category: "Spices",
-      image: "/products_images/Onion_powder.png",
+      image: "/products_images/Onion_powder.webp",
       shortDescription: "Dehydrated onion powder for seasoning systems, convenience foods, and bulk ingredient supply.",
       overview:
         "Onion powder is prepared for buyers looking for stable dehydration quality, clean flavor, and reliable export handling. It works well across spice blends, snacks, soups, sauces, and food processing programs.",
@@ -779,7 +779,7 @@ export const products: Product[] = [
       name: "Onion Flakes",
       slug: "onion-flakes",
       category: "Spices",
-      image: "/products_images/Onion_flakes.png",
+      image: "/products_images/Onion_flakes.webp",
       shortDescription: "Dehydrated onion flakes for soups, seasonings, dry meals, and ingredient programs.",
       overview:
         "Onion flakes are processed for consistent dehydration, dependable export packing, and practical use across dry mixes and food manufacturing. They suit ingredient buyers, food processors, and bulk importers.",
@@ -804,7 +804,7 @@ export const products: Product[] = [
       name: "Garlic Flakes",
       slug: "garlic-flakes",
       category: "Spices",
-      image: "/products_images/Garlic_flakes.png",
+      image: "/products_images/Garlic_flakes.webp",
       shortDescription: "Dehydrated garlic flakes for seasonings, food processing, and dry ingredient applications.",
       overview:
         "Garlic flakes are supplied for buyers needing stable dehydration quality, convenient handling, and export-ready packing. They are suitable for seasoning systems, snack applications, ready meals, and ingredient supply.",
@@ -829,7 +829,7 @@ export const products: Product[] = [
      name: "Tomato Chips",
       slug: "tomato-chips",
       category: "Spices",
-    image: "/products_images/Dried_tomato.jpeg",
+    image: "/products_images/Dried_tomato.webp",
     shortDescription: "Dehydrated tomato chips for snack, seasoning, and processing applications.",
     overview:
       "Tomato chips are prepared with controlled drying and suitable export packing for ingredient buyers and food processors. They offer convenience, stable handling, and broad application potential.",
@@ -854,7 +854,7 @@ export const products: Product[] = [
     name: "Tomato Powder",
     slug: "tomato-powder",
     category: "Spices",
-    image: "/products_images/Tomato_powder.jpeg",
+    image: "/products_images/Tomato_powder.webp",
     shortDescription: "Fine tomato powder for seasoning, sauces, and food manufacturing.",
     overview:
       "Tomato powder is supplied for ingredient buyers who need uniform texture, color, and packaging reliability. It is suitable for dry mixes, sauces, snacks, and institutional food processing.",
@@ -879,7 +879,7 @@ export const products: Product[] = [
     name: "Cabbage Powder",
     slug: "cabbage-powder",
     category: "Spices",
-    image: "/products_images/Cabbage_powder.png",
+    image: "/products_images/Cabbage_powder.webp",
     shortDescription: "Dehydrated cabbage powder for convenience foods and ingredient programs.",
     overview:
       "Cabbage powder is processed for stable shelf life, export packing, and food industry use. It is suitable for dry mixes, soups, snacks, and processing formulations.",
@@ -904,7 +904,7 @@ export const products: Product[] = [
     name: "Broccoli Powder",
     slug: "broccoli-powder",
     category: "Spices",
-    image: "/products_images/Broccoli_powder.jpeg",
+    image: "/products_images/Broccoli_powder.webp",
     shortDescription: "Broccoli powder for health blends, food ingredients, and specialty formulations.",
     overview:
       "Broccoli powder is supplied for buyers seeking vegetable-based ingredients with controlled processing quality and export-ready packing. It supports health, food, and specialty product applications.",
@@ -929,7 +929,7 @@ export const products: Product[] = [
     name: "Moringa Powder",
     slug: "moringa-powder",
     category: "Spices",
-    image: "/products_images/Moringa_powder.jpeg",
+    image: "/products_images/Moringa_powder.webp",
     shortDescription: "Premium moringa powder for wellness, nutraceutical, and ingredient markets.",
     overview:
       "Moringa powder is supplied for health-conscious product lines, nutraceutical formulations, and export ingredient buyers. It is processed for fine texture and dependable packaging quality.",
@@ -954,7 +954,7 @@ export const products: Product[] = [
     name: "Mango Powder",
     slug: "mango-powder",
     category: "Spices",
-    image: "/products_images/Dry_Mango_Powder.jpeg",
+    image: "/products_images/Dry_Mango_Powder.webp",
     shortDescription: "Tangy mango powder for seasoning blends, snacks, and culinary use.",
     overview:
       "Mango powder is processed for flavor consistency, moisture control, and export-safe packaging. It is suitable for spice blenders, snack manufacturers, and wholesale buyers.",
@@ -979,7 +979,7 @@ export const products: Product[] = [
     name: "Tamarind Paste",
     slug: "tamarind-paste",
     category: "Spices",
-    image: "/products_images/Tamaring_paste.png",
+    image: "/products_images/Tamaring_paste.webp",
     shortDescription: "Tamarind paste for culinary, processing, and export ingredient buyers.",
     overview:
       "Tamarind paste is prepared for food manufacturers, wholesalers, and ingredient importers requiring reliable acidity, safe packing, and export-friendly handling.",
@@ -1004,7 +1004,7 @@ export const products: Product[] = [
     name: "Tamarind Seeds Kernel",
     slug: "tamarind-seeds-kernel",
     category: "Seeds",
-    image: "/products_images/Tamarind_seeds_kernel.jpeg",
+    image: "/products_images/Tamarind_seeds_kernel.webp",
     shortDescription: "Processed tamarind seed kernel for industrial and food-related applications.",
     overview:
       "Tamarind seed kernel is supplied for buyers needing stable quality, clean processing, and export-ready handling. It is used across food, industrial, and specialty ingredient applications.",
@@ -1029,7 +1029,7 @@ export const products: Product[] = [
     name: "Tamarind Powder",
     slug: "tamarind-powder",
     category: "Spices",
-    image: "/products_images/Tamarind_powder.jpeg",
+    image: "/products_images/Tamarind_powder.webp",
     shortDescription: "Fine tamarind powder for seasoning, culinary, and processing applications.",
     overview:
       "Tamarind powder is prepared with attention to acidity profile, texture, and export packaging quality. It is suitable for spice blends, culinary products, and food processing lines.",
@@ -1054,7 +1054,7 @@ export const products: Product[] = [
     name: "Tamarind Whole Seeds",
     slug: "tamarind-whole-seeds",
     category: "Seeds",
-    image: "/products_images/Tamarind_seeds.jpeg",
+    image: "/products_images/Tamarind_seeds.webp",
     shortDescription: "Whole tamarind seeds supplied for specialty processing and bulk trade.",
     overview:
       "Whole tamarind seeds are cleaned and packed for buyers requiring dependable export handling and bulk supply. The product is suitable for industrial, ingredient, and specialty programs.",
@@ -1079,7 +1079,7 @@ export const products: Product[] = [
     name: "Tamarind Pulp",
     slug: "tamarind-pulp",
     category: "Spices",
-    image: "/products_images/Tamarind_pulp.jpeg",
+    image: "/products_images/Tamarind_pulp.webp",
     shortDescription: "Export-ready tamarind pulp for sauces, seasonings, and food manufacturing.",
     overview:
       "Tamarind pulp is supplied for culinary and industrial food use with suitable export packing and stable handling. It is ideal for sauces, curries, beverages, and processing applications.",
@@ -1104,7 +1104,7 @@ export const products: Product[] = [
     name: "Masoor Dal",
     slug: "masoor-dal",
     category: "Pulses & Lentils",
-    image: "/products_images/Masoor_dal.jpeg",
+    image: "/products_images/Masoor_dal.webp",
     shortDescription: "Premium masoor dal with consistent grading and export-ready packing.",
     overview:
       "Masoor dal is supplied for wholesalers, retail programs, and food distributors seeking dependable pulse quality, clean processing, and stable export packaging for international markets.",
@@ -1129,7 +1129,7 @@ export const products: Product[] = [
     name: "Chana Dal",
     slug: "chana-dal",
     category: "Pulses & Lentils",
-    image: "/products_images/Chana_dal.jpeg",
+    image: "/products_images/Chana_dal.webp",
     shortDescription: "Quality chana dal processed for wholesale, retail, and export markets.",
     overview:
       "Chana dal is supplied with attention to cleanliness, uniform splitting, and dependable export packing. It is suitable for importers, wholesalers, food processors, and retail pulse programs.",

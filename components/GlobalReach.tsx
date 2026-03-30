@@ -12,7 +12,7 @@ export default function GlobalReach() {
 
       <div className="mt-12 flex justify-center">
         <img
-          src="/world-map.png"
+          src="/world-map.webp"
           className="opacity-70 w-[900px]"
           alt="world map"
         />

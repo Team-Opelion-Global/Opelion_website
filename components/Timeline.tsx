@@ -38,7 +38,7 @@ export default function Timeline() {
   return (
     <section
       className="py-16 md:py-24 relative overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+      style={{ backgroundImage: "url('/about-texture1.webp')" }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 

@@ -32,7 +32,7 @@ export default function Footer() {
       {/* 🔥 Background Image */}
       {/* <div className="absolute inset-0 z-0">
         <img
-          src="/Footer_edit.jpeg"   // 👈 your merged image
+          src="/Footer_edit.webp"   // 👈 your merged image
           alt="footer background"
           className="w-full h-full object-cover"
         />
@@ -41,12 +41,12 @@ export default function Footer() {
       {/* 🔥 Torn Paper Top Effect */}
           <div className="absolute top-0 left-0 w-full z-10">
             <img
-              src="/Footer_final.jpeg"
+              src="/Footer_final.webp"
               alt="torn effect"
               className="hidden w-full h-120 object-top lg:block"
             />
             <img
-              src="/Footer_mobile.png"
+              src="/Footer_mobile.webp"
               alt="torn effect mobile"
               className="block w-full h-250 object-top lg:hidden"
             />
@@ -68,7 +68,7 @@ export default function Footer() {
           <div className="max-w-[33rem] justify-self-start">
             <Link href="/" className="inline-flex max-w-full items-start gap-1 -mt-2">
               <Image
-                src="/Logo_shadow.png"
+                src="/Logo_shadow.webp"
                 alt="Opelion Global Private Limited"
                 width={152}
                 height={152}

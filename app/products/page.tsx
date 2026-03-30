@@ -224,7 +224,7 @@
 //       <section className="relative pb-24 pt-4 md:pt-6">
 //         <div
 //           className="absolute inset-0 bg-cover bg-center opacity-60"
-//           style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+//           style={{ backgroundImage: "url('/about-texture1.webp')" }}
 //         />
 //         <div className="absolute inset-0 bg-[#f8f5ef]/90" />
 
@@ -536,7 +536,7 @@ export default function ProductsPage() {
       <section className="relative pb-24 pt-4 md:pt-6">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-60"
-          style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+          style={{ backgroundImage: "url('/about-texture1.webp')" }}
         />
         <div className="absolute inset-0 bg-[#f8f5ef]/90" />
 

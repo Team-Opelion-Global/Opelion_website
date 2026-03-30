@@ -3,9 +3,9 @@
 // // // // import { Link } from "wouter";
 // // // import Link from "next/link";
 
-// // // import blog1 from "@/public/images/blog1.png";
-// // // import blog2 from "@/public/images/blog2.png";
-// // // import blog3 from "@/public/images/blog3.png";
+// // // import blog1 from "@/public/images/blog1.webp";
+// // // import blog2 from "@/public/images/blog2.webp";
+// // // import blog3 from "@/public/images/blog3.webp";
 
 // // // export default function BlogPreview() {
 // // //   const blogs = [
@@ -94,7 +94,7 @@
 //     <div
 //       id="blog"
 //       className="min-h-screen bg-cover bg-center"
-//       style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+//       style={{ backgroundImage: "url('/about-texture1.webp')" }}
 //     >
 //       {/* HEADER */}
 //       <section className="py-20">
@@ -209,7 +209,7 @@
 //     <div
 //       id="blog"
 //       className="min-h-screen bg-cover bg-center"
-//       style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+//       style={{ backgroundImage: "url('/about-texture1.webp')" }}
 //     >
 //       {/* HEADER */}
 //       <section className="py-20">
@@ -338,7 +338,7 @@ export default async function BlogPage() {
     <div
       id="blog"
       className="min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/about-texture1.jpg')" }}
+      style={{ backgroundImage: "url('/about-texture1.webp')" }}
     >
       {/* HEADER */}
       <section className="py-14 md:py-16 lg:py-14">

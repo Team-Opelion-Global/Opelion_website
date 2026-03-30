@@ -30,7 +30,7 @@ const locations: Location[] = [
     representative: "M.Krishna Harshitha",
     email: "krishna.m@opelionglobal.com",
     isHeadquarters: true,
-    flagSrc: "/India_flag.png",
+    flagSrc: "/India_flag.webp",
     flagAlt: "India flag",
   },
   {
@@ -40,7 +40,7 @@ const locations: Location[] = [
     country: "Canada",
     representative: "Mohit.S",
     email: "mohit.s@opelionglobal.com",
-    flagSrc: "/Canada_flag.jpeg",
+    flagSrc: "/Canada_flag.webp",
     flagAlt: "Canada flag",
   },
   {
@@ -50,7 +50,7 @@ const locations: Location[] = [
     country: "United Kingdom",
     representative: "Devanshi. B",
     email: "devanshi.b@opelionglobal.com",
-    flagSrc: "/UK_flag.png",
+    flagSrc: "/UK_flag.webp",
     flagAlt: "United Kingdom flag",
   },
 ];
@@ -122,7 +122,7 @@ export default function OurLocations() {
       <style jsx>{`
         .loc-root {
           background-color: #f5f3ef;
-          background-image: url("/about-texture1.jpg");
+          background-image: url("/about-texture1.webp");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
