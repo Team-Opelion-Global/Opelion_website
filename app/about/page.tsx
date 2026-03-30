@@ -357,7 +357,7 @@ export default function AboutPage() {
           content: "";
           position: absolute;
           inset: 0;
-          background-image: url("/World_map.png");
+          background-image: url("/World_map.webp");
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
