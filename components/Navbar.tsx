@@ -1,7 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,19 +22,22 @@ export default function Navbar() {
           href="/"
           className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px]
           rounded-full flex items-center justify-center
-          bg-[url('/about-texture1.jpg')] bg-cover bg-center shadow-xl"
+          bg-[url('/about-texture1.webp')] bg-cover bg-center shadow-xl"
         >
-          <img
-            src="/Logo1.png"
-            alt="Opelion"
-            className="mt-3 h-20 object-contain md:h-32 lg:h-40"
-          />
+        <Image
+          src="/Logo1 (2).webp"
+          alt="Opelion"
+          width={160}
+          height={160}
+          priority          // ← Logo above-the-fold hai, priority lagao
+          className="mt-3 h-20 object-contain md:h-32 lg:h-40"
+        />
         </Link>
       </div>
 
       {/* TOP BAR */}
       <div className="text-sm py-3 px-4 md:px-8 flex items-center justify-between md:justify-end gap-6 relative z-20
-      bg-[url('/about-texture1.jpg')] bg-cover bg-center">
+      bg-[url('/about-texture1.webp')] bg-cover bg-center">
         <button
           className="md:hidden flex flex-col gap-1.5 z-50 rounded-full border border-[#1F6B7A]/20 bg-white/20 px-3 py-2 backdrop-blur-sm"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -59,7 +62,7 @@ export default function Navbar() {
       <div className="relative hidden md:block text-white">
 
         {/* Background */}
-        <div className="absolute inset-0 bg-[url('/navbar_blue.png')] bg-cover"></div>
+        <div className="absolute inset-0 bg-[url('/navbar_blue.webp')] bg-cover"></div>
 
         {/* NAV CONTENT */}
         <div className="relative z-20 max-w-6xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
