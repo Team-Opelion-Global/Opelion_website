@@ -46,11 +46,11 @@ export default function AboutPreview() {
     >
       <div className="absolute inset-0">
         <Image
-          src="/About_bg.jpeg"
+          src="/About_bg.webp"
           alt="About Opelion Global"
           fill
           className="object-cover object-right"
-          priority
+          // priority
         />
         <div className="absolute inset-0 bg-black/30 md:bg-transparent" />
       </div>
