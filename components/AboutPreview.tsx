@@ -74,18 +74,18 @@ export default function AboutPreview() {
 
           <div className="reveal h-[3px] w-16 rounded-full bg-[#e6c76a]/60" />
 
-          <p className={`reveal ${cormorant.className} text-[1.24rem] font-medium leading-[1.72] text-white md:text-[1.54rem] md:text-black`}>
+          <p className={`reveal ${cormorant.className} text-justify text-[1.24rem] font-medium leading-[1.72] text-white md:text-[1.54rem] md:text-black`}>
             Opelion Global Pvt Ltd was established with the intention of creating
             a more structured and dependable approach to global agro trade.
           </p>
 
-          <p className={`reveal ${cormorant.className} text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
+          <p className={`reveal ${cormorant.className} text-justify text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
             In an industry where supply often fluctuates and commitments can lack
             consistency, the company focuses on building systems that bring
             clarity to every stage of the process — from sourcing to shipment.
           </p>
 
-          <p className={`reveal ${cormorant.className} text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
+          <p className={`reveal ${cormorant.className} text-justify text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
             The objective is straightforward: to ensure that international trade
             is supported by reliability, visibility, and disciplined execution.
           </p>
