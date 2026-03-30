@@ -79,9 +79,9 @@ export default function ContactSection() {
 
             <p className="text-md text-[#1f3c5b] font-medium">
               <span className="grid" style={{ gridTemplateColumns: "auto 1fr", gap: "0 8px" }}>
-              <span>Monday-Friday</span><span>: &nbsp; 9:00 AM - 6:00 PM</span>
-              <span>Saturday</span><span>: &nbsp; 9:00 AM - 4:00 PM</span>
-              <span>Sunday</span><span>: &nbsp; Closed</span>
+              <span>Monday-Friday</span><span>:&nbsp; 9:00 AM - 6:00 PM</span>
+              <span>Saturday</span><span>:&nbsp; 9:00 AM - 4:00 PM</span>
+              <span>Sunday</span><span>:&nbsp; Closed</span>
             </span>
             </p>
           </div>
