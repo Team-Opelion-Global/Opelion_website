@@ -39,7 +39,7 @@ const locations: Location[] = [
     city: "Toronto",
     country: "Canada",
     representative: "Mohit.V",
-    email: "mohit.s@opelionglobal.com",
+    email: "mohit.v@opelionglobal.com",
     flagSrc: "/Canada_flag.webp",
     flagAlt: "Canada flag",
   },
