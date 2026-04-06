@@ -15,7 +15,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Welcome to Opelion Global Private Limited",
-  description: "Opelion Global private limited specializes in the end-to-end sourcing, processing, quality assurance, and export of premium agro products to international markets.",
+  description: "Opelion Global Private Limited specializes in the end-to-end sourcing, processing, quality assurance, and export of premium agro products to international markets.",
   icons: {
     icon: "/Logo_shadow.webp",
   },
