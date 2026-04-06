@@ -38,7 +38,7 @@ const locations: Location[] = [
     badgeClassName: "rep-badge",
     city: "Toronto",
     country: "Canada",
-    representative: "Mohit.S",
+    representative: "Mohit.V",
     email: "mohit.s@opelionglobal.com",
     flagSrc: "/Canada_flag.webp",
     flagAlt: "Canada flag",
