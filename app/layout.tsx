@@ -17,7 +17,7 @@ export const metadata = {
   title: "Welcome to Opelion Global Private Limited",
   description: "Opelion Global private limited specializes in the end-to-end sourcing, processing, quality assurance, and export of premium agro products to international markets.",
   icons: {
-    icon: "/Logo1 (2).webp",
+    icon: "/Logo_shadow.webp",
   },
 };
 
