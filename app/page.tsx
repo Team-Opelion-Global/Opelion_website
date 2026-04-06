@@ -1,22 +1,3 @@
-// import Navbar from "@/components/Navbar";
-// import Hero from "@/components/Hero";
-// import Stats from "@/components/Stats";
-// import GlobalReach from "@/components/GlobalReach";
-// import Footer from "@/components/Footer";
-
-// export default function Home() {
-//   return (
-//     <main className="bg-[#0b0f14] text-white">
-
-//       <Navbar />
-//       <Hero />
-//       <Stats />
-//       <GlobalReach />
-//       <Footer />
-
-//     </main>
-//   );
-// }
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
