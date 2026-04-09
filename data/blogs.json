@@ -1,29 +1,5 @@
 [
   {
-    "id": 4,
-    "slug": "why-india-is-the-worlds-spice-capital",
-    "img": "/images/blog1.webp",
-    "date": "April 9, 2026",
-    "category": "Market Trends",
-    "title": "Why India is the World's Spice Capital",
-    "desc": "hi hello",
-    "intro": "namaste",
-    "sections": [
-      {
-        "heading": "test 1",
-        "body": "hello"
-      },
-      {
-        "heading": "g via",
-        "body": "via github api\""
-      },
-      {
-        "heading": "via github api\"",
-        "body": "via github api\" via github api\""
-      }
-    ]
-  },
-  {
     "id": 1,
     "slug": "global-quinoa-demand-2026",
     "img": "/images/blog1.webp",
