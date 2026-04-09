@@ -8,7 +8,6 @@ import Timeline from "@/components/Timeline";
 import Products_Preview from "@/components/Products_Preview";
 import BlogPreview from "@/components/BlogPreview";
 import ContactSection from "@/components/ContactSection";
-import PagesDirectory from "@/components/PagesDirectory";
 
 export default function Home() {
 return ( <main id="top" className="bg-[#0b0f14] text-white">
@@ -27,8 +26,6 @@ return ( <main id="top" className="bg-[#0b0f14] text-white">
   <Products_Preview />
 
   <BlogPreview />
-
-  <PagesDirectory />
 
   {/* <Stats /> */}
 

@@ -1,11 +1,22 @@
 import { MetadataRoute } from 'next'
+import { getBlogs } from '@/lib/blog-store'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogs = await getBlogs()
+  
+  const blogEntries: MetadataRoute.Sitemap = blogs.map((blog) => ({
+    url: `https://opelionglobal.com/blog/${blog.slug}`,
+    lastModified: new Date(),
+    priority: 0.8,
+  }))
+
   return [
-    { url: 'https://opelionglobal.com', lastModified: new Date() },
-    { url: 'https://opelionglobal.com/about', lastModified: new Date() },
-    { url: 'https://opelionglobal.com/products', lastModified: new Date() },
-    { url: 'https://opelionglobal.com/blog', lastModified: new Date() },
-    { url: 'https://opelionglobal.com/locations', lastModified: new Date() },
+    { url: 'https://opelionglobal.com', lastModified: new Date(), priority: 1.0 },
+    { url: 'https://opelionglobal.com/about', lastModified: new Date(), priority: 0.9 },
+    { url: 'https://opelionglobal.com/products', lastModified: new Date(), priority: 0.9 },
+    { url: 'https://opelionglobal.com/blog', lastModified: new Date(), priority: 0.8 },
+    { url: 'https://opelionglobal.com/locations', lastModified: new Date(), priority: 0.8 },
+    { url: 'https://opelionglobal.com/contact', lastModified: new Date(), priority: 0.8 },
+    ...blogEntries,
   ]
 }
