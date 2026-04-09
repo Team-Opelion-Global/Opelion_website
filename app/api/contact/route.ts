@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const endpoint = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    const endpoint = process.env.GOOGLE_SHEETS_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbxgiAMMuffaAtW_VbG-OhQUoAxccG_tmdI_w2uHSTeJD2kLZpCKVvsLO6fgcCicfhG6/exec";
 
     if (!endpoint) {
       return NextResponse.json(
@@ -30,30 +30,44 @@ export async function POST(request: Request) {
       );
     }
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-        source: "website-contact-form",
-        submittedAt: new Date().toISOString(),
-      }),
-      cache: "no-store",
-    });
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          source: "website-contact-form",
+          submittedAt: new Date().toISOString(),
+        }),
+        cache: "no-store",
+      });
 
-    if (!response.ok) {
-      throw new Error("Failed to save contact details to Google Sheets.");
+      const responseText = await response.text();
+      console.log("Google Sheets Response:", response.status, responseText);
+
+      if (!response.ok) {
+        throw new Error(`Google Sheets returned ${response.status}: ${responseText}`);
+      }
+
+      return NextResponse.json(
+        { message: "Thanks. Your details have been recorded successfully." },
+        { status: 200 }
+      );
+    } catch (error) {
+      console.error("Contact form error:", error);
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to submit contact form.";
+
+      return NextResponse.json({ error: message }, { status: 500 });
     }
-
-    return NextResponse.json(
-      { message: "Thanks. Your details have been recorded successfully." },
-      { status: 200 }
-    );
   } catch (error) {
+    console.error("Contact form validation error:", error);
     const message =
       error instanceof Error
         ? error.message
