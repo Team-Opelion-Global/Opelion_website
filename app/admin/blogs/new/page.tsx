@@ -119,12 +119,20 @@ export default function NewBlogPage() {
             <p className="text-xs font-semibold tracking-[0.28em] text-[#c79a2b] uppercase mb-1">Admin</p>
             <h1 className={`${playfair.className} text-3xl text-[#124b5a]`}>New Blog Post</h1>
           </div>
-          <button
-            onClick={() => { sessionStorage.removeItem("blog_admin_token"); router.push("/admin/blogs"); }}
-            className="text-sm text-gray-500 hover:text-[#124b5a] border border-[#e7d7b8] px-4 py-2 rounded-full transition"
-          >
-            Sign Out
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={() => router.push("/blog")}
+              className="text-sm text-[#124b5a] hover:text-white bg-white hover:bg-[#124b5a] border border-[#e7d7b8] hover:border-[#124b5a] px-4 py-2 rounded-full transition font-medium"
+            >
+              Check Blogs
+            </button>
+            <button
+              onClick={() => { sessionStorage.removeItem("blog_admin_token"); router.push("/admin/blogs"); }}
+              className="text-sm text-gray-500 hover:text-[#124b5a] border border-[#e7d7b8] px-4 py-2 rounded-full transition"
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">

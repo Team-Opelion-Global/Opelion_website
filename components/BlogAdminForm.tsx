@@ -17,7 +17,7 @@ export default function BlogAdminForm() {
   const [adminToken, setAdminToken] = useState("");
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
-  const [image, setImage] = useState("/images/blog1.webp");
+  const [image, setImage] = useState("/blog_images/blog1.webp");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
@@ -71,7 +71,7 @@ export default function BlogAdminForm() {
       setStatus(`Published: /blog/${payload.post.slug}`);
       setTitle("");
       setSlug("");
-      setImage("/images/blog1.webp");
+      setImage("/blog_images/blog1.webp");
       setDate("");
       setCategory("");
       setDescription("");
@@ -132,7 +132,7 @@ export default function BlogAdminForm() {
             label="Image Path"
             value={image}
             onChange={setImage}
-            placeholder="/images/blog1.webp"
+            placeholder="/images/blogs/blog1.webp"
           />
         </div>
 

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "slug": "global-quinoa-demand-2026",
-    "img": "/images/blog1.webp",
+    "img": "/blog_images/blog1.webp",
     "date": "March 15, 2026",
     "category": "Market Trends",
     "title": "Global Quinoa Demand: What Importers Need to Know in 2026",
@@ -26,7 +26,7 @@
   {
     "id": 2,
     "slug": "understanding-export-grade-quinoa-sorting",
-    "img": "/images/blog2.webp",
+    "img": "/blog_images/blog2.webp",
     "date": "February 28, 2026",
     "category": "Quality Control",
     "title": "Understanding Export Grade Quinoa: The Sorting Process",
@@ -50,7 +50,7 @@
   {
     "id": 3,
     "slug": "sustainable-farming-practices-indian-quinoa",
-    "img": "/images/blog3.webp",
+    "img": "/blog_images/blog3.webp",
     "date": "February 10, 2026",
     "category": "Sustainability",
     "title": "Sustainable Farming Practices in Indian Quinoa Production",

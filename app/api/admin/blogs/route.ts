@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { sanitizeSlug } from "@/lib/blog-store";
+import { sanitizeSlug, getBlogs } from "@/lib/blog-store";
+import { promises as fs } from "fs";
+import path from "path";
 import type { BlogPost } from "@/lib/blogs";
 
 const GITHUB_API = "https://api.github.com";
@@ -7,6 +9,9 @@ const OWNER = process.env.GITHUB_OWNER!;
 const REPO = process.env.GITHUB_REPO!;
 const TOKEN = process.env.GITHUB_TOKEN!;
 const BLOGS_PATH = "data/blogs.json";
+
+// Check if running in development mode
+const isDev = process.env.NODE_ENV === "development";
 
 async function githubGet(filePath: string) {
   const res = await fetch(`${GITHUB_API}/repos/${OWNER}/${REPO}/contents/${filePath}`, {
@@ -75,7 +80,61 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
-    // Upload image to GitHub if provided
+    const slug = sanitizeSlug(customSlug?.trim() || title);
+
+    // Handle development mode (local file system)
+    if (isDev) {
+      const existingBlogs = await getBlogs();
+
+      if (existingBlogs.some((b) => b.slug === slug)) {
+        return NextResponse.json({ error: "A blog with this slug already exists." }, { status: 400 });
+      }
+
+      let imgPath = "/images/blog-default.webp";
+      if (imageBase64 && imageFileName) {
+        const ext = imageFileName.split(".").pop()?.toLowerCase() || "jpg";
+        const safeName = `${Date.now()}-${sanitizeSlug(imageFileName.replace(/\.[^/.]+$/, ""))}.${ext}`;
+        const imagePath = path.join(process.cwd(), "public", "images", "blogs", safeName);
+        
+        try {
+          // Create directory if it doesn't exist
+          const dir = path.dirname(imagePath);
+          await fs.mkdir(dir, { recursive: true });
+          
+          // Convert base64 to buffer and write
+          const buffer = Buffer.from(imageBase64, "base64");
+          await fs.writeFile(imagePath, buffer);
+          imgPath = `/images/blogs/${safeName}`;
+        } catch (imgErr) {
+          console.error("Image upload failed:", imgErr);
+          // Continue without image
+        }
+      }
+
+      const nextId = existingBlogs.length > 0
+        ? Math.max(...existingBlogs.map((b) => b.id)) + 1
+        : 1;
+
+      const newPost: BlogPost = {
+        id: nextId,
+        slug,
+        img: imgPath,
+        date: date.trim(),
+        category: category.trim(),
+        title: title.trim(),
+        desc: desc.trim(),
+        intro: intro.trim(),
+        sections: cleanSections,
+      };
+
+      const updatedBlogs = [newPost, ...existingBlogs];
+      const blogsFilePath = path.join(process.cwd(), "data", "blogs.json");
+      await fs.writeFile(blogsFilePath, JSON.stringify(updatedBlogs, null, 2), "utf8");
+
+      return NextResponse.json({ post: newPost }, { status: 201 });
+    }
+
+    // Handle production mode (GitHub API)
     let imgPath = "/images/blogs/default.webp";
     if (imageBase64 && imageFileName) {
       const ext = imageFileName.split(".").pop()?.toLowerCase() || "jpg";
@@ -106,8 +165,6 @@ export async function POST(request: Request) {
       Buffer.from(blogsFile.content, "base64").toString("utf8")
     );
 
-    const slug = sanitizeSlug(customSlug?.trim() || title);
-
     if (existingBlogs.some((b) => b.slug === slug)) {
       return NextResponse.json({ error: "A blog with this slug already exists." }, { status: 400 });
     }
@@ -136,6 +193,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ post: newPost }, { status: 201 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Failed to create blog post.";
+    console.error("Blog creation error:", error);
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
