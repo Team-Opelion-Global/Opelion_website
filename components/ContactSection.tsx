@@ -112,7 +112,7 @@ export default function ContactSection() {
 
                 try {
                   await fetch(
-                    "https://script.google.com/macros/s/AKfycbw7I_gpnxA7XBUWOg5GXICN5DWGvjSj__bc0m6G9SvA0mt7JS6wP751Bx60hn3QSZMm/exec",
+                    "https://script.google.com/macros/s/AKfycbxgiAMMuffaAtW_VbG-OhQUoAxccG_tmdI_w2uHSTeJD2kLZpCKVvsLO6fgcCicfhG6/exec",
                     {
                       method: "POST",
                       headers: {
