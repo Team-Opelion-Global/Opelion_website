@@ -35,6 +35,7 @@ const FAQS = [
 export default function ContactSection() {
   const [openFaq, setOpenFaq] = useState<number>(0);
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
 
   return (
     <section
@@ -111,16 +112,19 @@ export default function ContactSection() {
                 setLoading(true);
 
                 try {
-                  await fetch(
-                    "https://script.google.com/macros/s/AKfycbxgiAMMuffaAtW_VbG-OhQUoAxccG_tmdI_w2uHSTeJD2kLZpCKVvsLO6fgcCicfhG6/exec",
-                    {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify(data),
-                    }
-                  );
+                  const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                  });
+
+                  const result = await response.json();
+
+                  if (!response.ok) {
+                    throw new Error(result.error || "Failed to submit form.");
+                  }
 
                   // ✅ Google Analytics
                   if (typeof window !== "undefined" && window.gtag) {
@@ -130,8 +134,11 @@ export default function ContactSection() {
                     });
                   }
 
-                  alert("Message sent successfully!");
+                  setSuccessMessage(true);
                   form.reset();
+                  
+                  // Hide success message after 5 seconds
+                  setTimeout(() => setSuccessMessage(false), 5000);
 
                 } catch (error) {
                   console.error(error);
@@ -174,6 +181,14 @@ export default function ContactSection() {
                 {loading ? "Sending..." : "Submit >"}
               </button>
             </form>
+
+            {successMessage && (
+              <div className="mt-4 p-4 bg-green-100 border border-green-400 rounded-md">
+                <p className="text-green-700 font-semibold text-sm">
+                  ✓ Thank you for submitting! We'll get back to you soon.
+                </p>
+              </div>
+            )}
 
         
 
