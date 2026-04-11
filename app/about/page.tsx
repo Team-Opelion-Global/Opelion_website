@@ -361,8 +361,9 @@ export default function AboutPage() {
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          opacity: 0.3;
+          opacity: 0.7;
           pointer-events: none;
+          filter: brightness(1.1) contrast(1.15) sharpen(1.5);
         }
 
         .og-hero::after {
@@ -416,6 +417,7 @@ export default function AboutPage() {
         }
 
         .og-hero-desc {
+          font-family: "Nunito", sans-serif;
           font-size: 17px;
           line-height: 1.9;
           color: rgba(255, 255, 255, 0.72);

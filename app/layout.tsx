@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
 import Script from "next/script";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,6 +19,8 @@ export const metadata = {
   description: "Opelion Global Private Limited specializes in the end-to-end sourcing, processing, quality assurance, and export of premium agro products to international markets.",
   icons: {
     icon: "/Logo_shadow.webp",
+    shortcut: "/Logo_shadow.webp",
+    apple: "/Logo_shadow.webp",
   },
 };
 
@@ -29,6 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        <link rel="icon" type="image/webp" href="/Logo_shadow.webp" />
+        <link rel="shortcut icon" href="/Logo_shadow.webp" />
+        <link rel="apple-touch-icon" href="/Logo_shadow.webp" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2PE24GWJJL"
           strategy="afterInteractive"
@@ -44,6 +53,7 @@ export default function RootLayout({
       </head>
       <body className="font-[var(--font-inter)]">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
