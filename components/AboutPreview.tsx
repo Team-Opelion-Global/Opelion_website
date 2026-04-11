@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { Cormorant_Garamond, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Playfair_Display, Nunito } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -13,6 +13,11 @@ const cormorant = Cormorant_Garamond({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+});
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export default function AboutPreview() {
@@ -74,18 +79,18 @@ export default function AboutPreview() {
 
           <div className="reveal h-[3px] w-16 rounded-full bg-[#e6c76a]/60" />
 
-          <p className={`reveal ${cormorant.className} text-justify text-[1.24rem] font-medium leading-[1.72] text-white md:text-[1.54rem] md:text-black`}>
+          <p className={`reveal ${nunito.className} text-justify text-[1.1rem] font-medium leading-[1.72] text-[#4a5f5f] md:text-[1.3rem]`}>
             Opelion Global Pvt Ltd was established with the intention of creating
             a more structured and dependable approach to global agro trade.
           </p>
 
-          <p className={`reveal ${cormorant.className} text-justify text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
+          <p className={`reveal ${nunito.className} text-justify text-[1rem] font-medium leading-[1.76] text-[#4a5f5f] md:text-[1.2rem]`}>
             In an industry where supply often fluctuates and commitments can lack
             consistency, the company focuses on building systems that bring
-            clarity to every stage of the process — from sourcing to shipment.
+            clarity to every stage of the process from sourcing to shipment.
           </p>
 
-          <p className={`reveal ${cormorant.className} text-justify text-[1.14rem] font-medium leading-[1.76] text-white md:text-[1.34rem] md:text-black`}>
+          <p className={`reveal ${nunito.className} text-justify text-[1rem] font-medium leading-[1.76] text-[#4a5f5f] md:text-[1.2rem]`}>
             The objective is straightforward: to ensure that international trade
             is supported by reliability, visibility, and disciplined execution.
           </p>
