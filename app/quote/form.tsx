@@ -1,27 +1,154 @@
 "use client";
 
-import { Suspense } from "react";
-import QuoteForm from "./form";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Playfair_Display } from "next/font/google";
 
-export default function QuoteRequestPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <QuoteForm />
-    </Suspense>
-  );
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
 }
-"use client";
 
-import { Suspense } from "react";
-import QuoteForm from "./form";
+export default function QuoteForm() {
+  const searchParams = useSearchParams();
+  const [productName, setProductName] = useState("");
+  const [packaging, setPackaging] = useState("");
+  const [customPackaging, setCustomPackaging] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-export default function QuoteRequestPage() {
+  useEffect(() => {
+    const product = searchParams.get("product");
+    if (product) {
+      setProductName(decodeURIComponent(product));
+    }
+  }, [searchParams]);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorMessage("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // Build packaging value - combine with custom if selected
+    let packagingValue = packaging;
+    if (packaging === "Custom" && customPackaging) {
+      packagingValue = `Custom: ${customPackaging}`;
+    }
+
+    const data = {
+      productName: formData.get("productName")?.toString().trim() || "Pumpkin Seeds",
+      quantity: formData.get("quantity")?.toString().trim(),
+      incoterms: formData.get("incoterms")?.toString().trim(),
+      packaging: packagingValue,
+      productType: formData.get("tradeType")?.toString().trim(),
+      companyName: formData.get("companyName")?.toString().trim(),
+      email: formData.get("email")?.toString().trim(),
+      whatsappPhone: formData.get("whatsappPhone")?.toString().trim() || "",
+      orderType: formData.get("orderType")?.toString().trim(),
+      country: formData.get("country")?.toString().trim(),
+      destinationPort: formData.get("destinationPort")?.toString().trim(),
+      specificRequirements: formData.get("specificRequirements")?.toString().trim() || "",
+    };
+
+    // Validation
+    if (
+      !data.productName ||
+      !data.quantity ||
+      !data.incoterms ||
+      !data.packaging ||
+      !data.companyName ||
+      !data.email ||
+      !data.orderType ||
+      !data.country ||
+      !data.destinationPort ||
+      (packaging === "Custom" && !customPackaging)
+    ) {
+      setErrorMessage("Please fill in all required fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit quote request.");
+      }
+
+      // Google Analytics
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "quote_request_submit", {
+          event_category: "Quote",
+          event_label: "Quote Request Form",
+          product: data.productName,
+        });
+      }
+
+      setSuccessMessage(true);
+      form.reset();
+      setProductName("Pumpkin Seeds");
+      setPackaging("");
+      setCustomPackaging("");
+
+      // Hide success message after 5 seconds
+      setTimeout(() => setSuccessMessage(false), 5000);
+    } catch (error) {
+      console.error(error);
+      setErrorMessage(
+        error instanceof Error ? error.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <QuoteForm />
-    </Suspense>
-  );
-}
+    <main className="bg-[#f7f2e8]">
+      <Navbar />
+
+      <section className="py-16">
+        <div className="max-w-2xl mx-auto px-6">
+          {/* Header */}
+          <div className="mb-12 text-center">
+            <p className="text-sm font-semibold tracking-widest text-[#D4AF37] mb-3">
+              REQUEST A QUOTE
+            </p>
+            <h1
+              className={`${playfair.className} text-[2.5rem] md:text-4xl font-semibold tracking-[0.02em] text-[#1f6b7a] mb-4`}
+            >
+              Get a Custom Quote
+            </h1>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto">
+              Fill out the form below with your requirements and we'll provide you with
+              a detailed quote tailored to your needs.
+            </p>
+          </div>
+
+          {/* Form Card */}
+          <div className="bg-white border border-[#d9c7a1] shadow-lg p-8 md:p-10 rounded-[12px]">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Product Name - Auto-filled, Non-editable */}
               <div>
                 <label className="block text-sm font-medium text-[#1f3c5b] mb-2">
                   Product <span className="text-red-500">*</span>
