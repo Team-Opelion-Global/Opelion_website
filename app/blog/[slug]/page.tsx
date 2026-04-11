@@ -1,10 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ShareChip from "@/components/ShareChip";
 import { getBlogBySlug, getBlogs } from "@/lib/blog-store";
 import { normalizeTopic } from "@/lib/blog-topics";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Article Not Found",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.intro,
+    openGraph: {
+      title: post.title,
+      description: post.intro,
+      images: [
+        {
+          url: post.img,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      type: "article",
+      authors: ["Opelion Team"],
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.intro,
+      images: [post.img],
+    },
+  };
+}
 
 export default async function BlogPostPage({
   params,
@@ -103,9 +146,9 @@ export default async function BlogPostPage({
                       <span className="mr-2 text-xs uppercase tracking-[0.28em] text-[#c79a2b]">
                         Share
                       </span>
-                      <ShareChip label="LinkedIn" />
-                      <ShareChip label="Twitter" />
-                      <ShareChip label="WhatsApp" />
+                      <ShareChip label="LinkedIn" title={post.title} />
+                      <ShareChip label="Twitter" title={post.title} />
+                      <ShareChip label="WhatsApp" title={post.title} />
                     </div>
 
                     <Link
@@ -131,12 +174,12 @@ export default async function BlogPostPage({
                       <p className="mb-5 text-[15px] leading-7 text-[#5d4334]">
                         Premium Indian agro products delivered to global markets with quality and trust.
                       </p>
-                      <Link
-                        href="/#contact"
+                      <a
+                        href="mailto:sales@opelionglobal.com?subject=Partnership Inquiry - Opelion Global&body=Hello Opelion Global,%0D%0A%0D%0AI am interested in partnering with your company for premium agro products.%0D%0A%0D%0APlease provide more information about:%0D%0A- Your product offerings%0D%0A- Pricing and MOQ (Minimum Order Quantity)%0D%0A- Delivery timelines%0D%0A- Payment terms%0D%0A%0D%0AThank you!%0D%0A%0D%0ABest regards,"
                         className="inline-block rounded-lg bg-[#124b5a] px-5 py-3 font-semibold text-white transition hover:bg-[#0f3f4b]"
                       >
                         Get in Touch
-                      </Link>
+                      </a>
                     </div>
                   </div>
 
@@ -185,13 +228,5 @@ export default async function BlogPostPage({
       </section>
       <Footer />
     </main>
-  );
-}
-
-function ShareChip({ label }: { label: string }) {
-  return (
-    <span className="rounded-md border border-[#e7d7b8] bg-white px-4 py-2 text-sm text-[#124b5a]">
-      {label}
-    </span>
   );
 }

@@ -88,7 +88,7 @@ export default async function ProductPage({
                 {"<"} Back
               </Link>
               <Link
-                href="/#contact"
+                href={`/quote?product=${encodeURIComponent(product.name)}`}
                 className="inline-block bg-[#124b5a] text-white px-6 py-3 rounded-full hover:bg-[#0f3f4b] transition"
               >
                 Request Quote →
