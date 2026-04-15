@@ -68,6 +68,7 @@ export default function QuoteForm() {
       !data.quantity ||
       !data.incoterms ||
       !data.packaging ||
+      !data.productType ||   //added product type as required
       !data.companyName ||
       !data.email ||
       !data.orderType ||
