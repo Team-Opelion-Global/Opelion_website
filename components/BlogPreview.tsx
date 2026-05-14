@@ -52,7 +52,7 @@ export default async function BlogPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {blogs.map((blog) => (
+            {blogs.slice(0, 3).map((blog) => (
               <Card
                 key={blog.id}
                 className="group relative rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition bg-white"
